@@ -17,6 +17,7 @@ jobs:
 
     env:
       TF_ROOT: env/prod
+      INFRACOST_CURRENCY: ${{ secrets.INFRACOST_CURRENCY }}
       # If you're using Terraform Cloud/Enterprise and have variables or private modules stored
       # on there, specify the following to automatically retrieve the variables:
       #   INFRACOST_TERRAFORM_CLOUD_TOKEN: ${{ secrets.TFC_TOKEN }}
@@ -78,7 +79,7 @@ jobs:
                                      --repo=$GITHUB_REPOSITORY \
                                      --github-token=${{github.token}} \
                                      --pull-request=${{github.event.pull_request.number}} \
-                                     --behavior=update
+                                     --behavior=new
       - name: Send json
         run: |
           infracost upload --path /tmp/infracost-base.json
