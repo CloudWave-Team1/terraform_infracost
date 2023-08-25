@@ -83,3 +83,7 @@ jobs:
       - name: Send json
         run: |
           infracost upload --path /tmp/infracost-base.json
+
+      - name: Send yml 
+        run: |
+          infracost upload --path ./github/workflows/infracost.yml
