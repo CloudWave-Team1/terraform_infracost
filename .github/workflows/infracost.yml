@@ -1,7 +1,7 @@
 # The GitHub Actions docs (https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#on)
 # describe other options for 'on', 'pull_request' is a good default.
-# on: [pull_request]
-on: [push]
+on: [pull_request]
+# on: [push]
 env:
 #   # If you use private modules you'll need this env variable to use
 #   # the same ssh-agent socket value across all jobs & steps.
@@ -16,7 +16,7 @@ jobs:
       pull-requests: write
 
     env:
-      TF_ROOT: env/prod
+      TF_ROOT: /
       # If you're using Terraform Cloud/Enterprise and have variables or private modules stored
       # on there, specify the following to automatically retrieve the variables:
       #   INFRACOST_TERRAFORM_CLOUD_TOKEN: ${{ secrets.TFC_TOKEN }}
