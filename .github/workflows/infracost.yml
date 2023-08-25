@@ -1,5 +1,6 @@
 # The GitHub Actions docs (https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#on)
 # describe other options for 'on', 'pull_request' is a good default.
+name: Workflow 1
 on: [pull_request]
 # on: [push]
 env:
@@ -84,6 +85,4 @@ jobs:
         run: |
           infracost upload --path /tmp/infracost-base.json
 
-      - name: Send yml 
-        run: |
-          infracost upload --path ./github/workflows/infracost.yml
+      
