@@ -84,5 +84,7 @@ jobs:
       - name: Send json
         run: |
           infracost upload --path /tmp/infracost-base.json
+          infracost upload --path /tmp/infracost.json
+
 
       
