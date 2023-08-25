@@ -1,0 +1,14 @@
+version: 0.1
+projects:
+    - path: .
+      name: <no value>
+      terraform_var_files:
+        - env/prod/main.tf
+    - path: .
+      name: <no value>
+      terraform_var_files:
+        - env/prod/output.tf
+    - path: .
+      name: <no value>
+      terraform_var_files:
+        - env/prod/variables.tf
