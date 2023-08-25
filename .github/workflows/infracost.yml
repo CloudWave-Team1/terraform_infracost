@@ -81,4 +81,4 @@ jobs:
                                      --behavior=update
       - name: Send json
         run: |
-          infracost upload --path infracost-base.json
+          infracost upload --path /tmp/infracost-base.json
