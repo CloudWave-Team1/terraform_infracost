@@ -67,7 +67,7 @@ variable "launch_template_image_id2" {
  }
 
 variable "launch_template_instance_type2" {
-  default = "t2.micro"
+  default = "c5.large"
 }
 
 variable "launch_template_name_prefix2" {
@@ -338,20 +338,4 @@ variable "user_data_script" {
     cd /home/ec2-user/apps
     java -jar app.jar
     EOT
-}
-
-variable "max_price1" {
-  default = "0.1152"
-}
-
-variable "min_price1" {
-  default = "0.0144"
-}
-
-variable "max_price2" {
-  default = "0.1152"
-}
-
-variable "min_price2" {
-  default = "0.0144"
 }

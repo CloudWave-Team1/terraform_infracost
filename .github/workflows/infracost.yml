@@ -1,7 +1,8 @@
 # The GitHub Actions docs (https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#on)
 # describe other options for 'on', 'pull_request' is a good default.
-# on: [pull_request]
-on: [push]
+name: Workflow 1
+on: [pull_request]
+# on: [push]
 env:
 #   # If you use private modules you'll need this env variable to use
 #   # the same ssh-agent socket value across all jobs & steps.
@@ -17,6 +18,7 @@ jobs:
 
     env:
       TF_ROOT: env/prod
+      INFRACOST_CURRENCY: ${{ secrets.INFRACOST_CURRENCY }}
       # If you're using Terraform Cloud/Enterprise and have variables or private modules stored
       # on there, specify the following to automatically retrieve the variables:
       #   INFRACOST_TERRAFORM_CLOUD_TOKEN: ${{ secrets.TFC_TOKEN }}
@@ -78,4 +80,11 @@ jobs:
                                      --repo=$GITHUB_REPOSITORY \
                                      --github-token=${{github.token}} \
                                      --pull-request=${{github.event.pull_request.number}} \
-                                     --behavior=update
+                                     --behavior=new
+      - name: Send json
+        run: |
+          infracost upload --path /tmp/infracost-base.json
+          infracost upload --path /tmp/infracost.json
+
+
+      
