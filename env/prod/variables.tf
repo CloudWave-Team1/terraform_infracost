@@ -67,7 +67,7 @@ variable "launch_template_image_id2" {
  }
 
 variable "launch_template_instance_type2" {
-  default = "c5.large"
+  default = "t3.2xlarge"
 }
 
 variable "launch_template_name_prefix2" {
