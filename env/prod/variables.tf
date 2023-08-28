@@ -45,7 +45,7 @@ variable "launch_template_image_id1" {
  }
 
 variable "launch_template_instance_type1" {
-  default = "t2.micro"
+  default = "m5.large"
 }
 
 variable "launch_template_name_prefix1" {
@@ -67,7 +67,7 @@ variable "launch_template_image_id2" {
  }
 
 variable "launch_template_instance_type2" {
-  default = "m5.large"
+  default = "c5.large"
 }
 
 variable "launch_template_name_prefix2" {
