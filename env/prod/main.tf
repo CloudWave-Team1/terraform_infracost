@@ -215,7 +215,7 @@ module "asg2" {
 terraform {
   backend "s3" {
     bucket         = "cgv-terraform-tf.state-bucket"
-    key            = "prd/terraform.tfstate"
+    key            = "..terraform.tfstate"
     region         = "ap-northeast-2"
     encrypt        = true
     
